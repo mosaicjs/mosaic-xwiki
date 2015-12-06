@@ -1,6 +1,6 @@
 # Mosaic XWiki Back-Office
 
-Mosaic XWiki is an XWiki application providing a back-office API and UI to collaborative maps such as (techonmap-v2)[https://github.com/ubimix/techonmap-ui].
+Mosaic XWiki is an XWiki application providing a back-office API and UI to collaborative maps such as [techonmap-v2](https://github.com/ubimix/techonmap-ui).
 
 ## Build
 
