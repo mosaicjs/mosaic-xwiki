@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <parent>mosaic.WebHome</parent>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1412948906000</date>
+  <creationDate>1412948866000</creationDate>
+  <contentUpdateDate>1412948906000</contentUpdateDate>
+  <version>1.1</version>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <web>mosaic</web>
+  <name>Importer</name>
+  <title>Importer</title>
+<content>{{groovy}}
+
+import groovy.json.JsonSlurper
+
+//these variables need to be declared as global variables of some sort (a 'def' will fire an error for some reason)
+MAX = -1;
+CLAZZ = "mosaic.Organization";
+DATA_DOC = "mosaic.Importer";
+DATA_FILE = "data.geo.json";
+DATA_SPACE = "wiki";
+
+if (request.op=="import") {
+  def dataDoc = xwiki.getDocument(DATA_DOC);
+  def dataJsonFile = dataDoc.getAttachment(DATA_FILE);
+  def dataJson = dataJsonFile.getContentAsString();
+  def slurper = new JsonSlurper()
+  def results = slurper.parseText(dataJson)
+  createDocuments(results);
+} else if (request.op=="delete") {
+  deleteAll(CLAZZ)
+}
+
+def createDocuments(results) {
+  def counter = 0;
+  for (int i=0; i &lt; results.size(); i++) {
+    def props = results[i].properties;
+    def geometry = results[i].geometry;
+    def id = props.id;
+    def type = props.type;
+    if (counter &lt; MAX || MAX &lt; 0) {
+      counter++;
+      def newDoc = xwiki.getDocument("${DATA_SPACE}.${id}");
+      println "* $counter - [[$newDoc]]";
+      if (!xwiki.exists(newDoc.fullName)) {
+        newDoc.setParent("${DATA_SPACE}.WebHome");
+        def idx = newDoc.createNewObject(CLAZZ);
+        def obj = newDoc.getObject(CLAZZ, idx);
+
+        obj.set("name", props.name);
+        obj.set("url", props.url);
+        obj.set("description", props.description);
+        obj.set("category", props.category);
+        obj.set("creationYear", props.creationyear);
+
+        obj.set("streetAddress", props.address);
+        obj.set("postcode", props.postcode);
+        obj.set("city", props.city);
+        obj.set("country", props.country);
+
+        obj.set("phone", props.phone);
+        obj.set("email", props.email);
+        obj.set("twitter", props.twitter);
+        obj.set("facebook", props.facebook);
+        obj.set("googlePlus", props.googlePlus);
+        obj.set("linkedIn", props.linkedIn);
+
+        if (geometry != null) {
+          obj.set("latitude", geometry.coordinates[1].doubleValue());
+          obj.set("longitude", geometry.coordinates[0].doubleValue());
+        } else {
+          obj.set("latitude", Double.valueOf("48"));
+          obj.set("longitude", Double.valueOf("2"));
+        }
+
+        /*** TAGS **/
+        idx = newDoc.createNewObject("XWiki.TagClass");
+        obj = newDoc.getObject("XWiki.TagClass", idx);
+        def tags = new ArrayList();
+        props.tags.each() {
+          tags.add(it.toString());
+        }
+        obj.set("tags", tags);
+
+        def op = newDoc.save("version initiale - import csv", true);
+        println "[[${newDoc.fullName}]]"
+      }
+    }
+
+  }
+}
+
+
+def deleteAll(clazz) {
+
+   def stmt = "from doc.object(${clazz}) as entities";
+   def results = services.query.xwql(stmt).execute();
+   results.each() {
+      def docEntry = xwiki.getDocument(it);
+      def name = docEntry.get("name");
+      docEntry.delete();
+      println "* Removed : $it";
+   }
+
+}
+
+
+{{/groovy}}</content></xwikidoc>

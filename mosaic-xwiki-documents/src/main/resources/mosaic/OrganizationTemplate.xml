@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <parent>mosaic.WebHome</parent>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1412948906000</date>
+  <creationDate>1412948866000</creationDate>
+  <contentUpdateDate>1412948906000</contentUpdateDate>
+  <version>1.1</version>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <web>mosaic</web>
+  <name>OrganizationTemplate</name>
+  <title>OrganizationTemplate</title>
+<object>
+<class>
+<name>mosaic.Organization</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<category>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>category</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>Catégorie</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>Communauté|École|Entreprise|Incubateur|Tiers-lieu</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</category>
+<city>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>city</name>
+<number>8</number>
+<picker>0</picker>
+<prettyName>Ville</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</city>
+<country>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>country</name>
+<number>9</number>
+<picker>0</picker>
+<prettyName>Pays</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators>|, </separators>
+<size>1</size>
+<sort>none</sort>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</country>
+<creationYear>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>creationYear</name>
+<number>5</number>
+<picker>0</picker>
+<prettyName>Date de création</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators>|, </separators>
+<size>1</size>
+<sort>none</sort>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</creationYear>
+<description>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>description</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>Description</prettyName>
+<rows>15</rows>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</description>
+<email>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>email</name>
+<number>11</number>
+<picker>0</picker>
+<prettyName>E-mail</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp>/^(([^@\s]+)@((?:[-a-zA-Z0-9]+\.)+[a-zA-Z]{2,}))?$/</validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.EmailClass</classType>
+</email>
+<facebook>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>facebook</name>
+<number>13</number>
+<picker>0</picker>
+<prettyName>Facebook</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</facebook>
+<googlePlus>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>googlePlus</name>
+<number>15</number>
+<picker>0</picker>
+<prettyName>Google+</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</googlePlus>
+<latitude>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>latitude</name>
+<number>16</number>
+<numberType>double</numberType>
+<prettyName>Latitude</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</latitude>
+<linkedIn>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>linkedIn</name>
+<number>14</number>
+<picker>0</picker>
+<prettyName>LinkedIn</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</linkedIn>
+<longitude>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>longitude</name>
+<number>17</number>
+<numberType>double</numberType>
+<prettyName>Longitude</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</longitude>
+<name>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>name</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>Nom</prettyName>
+<size>70</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<phone>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>phone</name>
+<number>10</number>
+<picker>0</picker>
+<prettyName>Téléphone</prettyName>
+<rows>5</rows>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</phone>
+<postcode>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>postcode</name>
+<number>7</number>
+<picker>0</picker>
+<prettyName>Code postal</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</postcode>
+<streetAddress>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>streetAddress</name>
+<number>6</number>
+<picker>0</picker>
+<prettyName>Adresse</prettyName>
+<rows>5</rows>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</streetAddress>
+<twitter>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>twitter</name>
+<number>12</number>
+<picker>0</picker>
+<prettyName>Twitter</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</twitter>
+<url>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>url</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>Site web</prettyName>
+<size>80</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</url>
+</class>
+<name>mosaic.OrganizationTemplate</name>
+<number>0</number>
+<className>mosaic.Organization</className>
+<guid>e3c77573-7b01-4db6-af64-8c8f519504f8</guid>
+<property>
+<category>Communauté</category>
+</property>
+<property>
+<city></city>
+</property>
+<property>
+<country></country>
+</property>
+<property>
+<creationYear></creationYear>
+</property>
+<property>
+<description></description>
+</property>
+<property>
+<email></email>
+</property>
+<property>
+<facebook></facebook>
+</property>
+<property>
+<googlePlus></googlePlus>
+</property>
+<property>
+<linkedIn></linkedIn>
+</property>
+<property>
+<name></name>
+</property>
+<property>
+<phone></phone>
+</property>
+<property>
+<postcode></postcode>
+</property>
+<property>
+<streetAddress></streetAddress>
+</property>
+<property>
+<twitter></twitter>
+</property>
+<property>
+<url></url>
+</property>
+</object>
+<content></content></xwikidoc>
