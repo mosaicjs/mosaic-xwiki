@@ -23,6 +23,11 @@ Installation steps:
 - Import the XAR 'mosaic-xwiki-documents.xar' into XWiki (see above) from the Import section of the XWiki Administration page
 - Re-saving the imported documents by using an account having programming rights may be needed for the scripts to execute properly
 
+Import GeoJSON data:
+- Navigate to the page ```mosaic.Importer```: http://{server-name}/xwiki/bin/view/mosaic/Importer
+- Attach a GeoJSON file to that page, named ```data.geojson```
+- Add ```op=import``` to the URL for launching the import: http://{server-name}/xwiki/bin/view/mosaic/Importer?op=import
+- Navigate to the page ```wiki.WebHome```: all the imported organizations should show up in a table
 
 ## Roadmap
 
