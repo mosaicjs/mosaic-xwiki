@@ -28,7 +28,6 @@ Installation steps:
 
 - Provide the necessary libraries for geocoding addresses from the back-office
 
-
 ## License
 
 This application is available under the license LGPL v2.0.
